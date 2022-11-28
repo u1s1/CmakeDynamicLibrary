@@ -17,6 +17,5 @@ add_library(message
     Message.cpp
   )
 
-include_directories(./include)
-
+target_include_directories(message PUBLIC ./include)
 
