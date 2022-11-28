@@ -1,4 +1,3 @@
-pushd %~dp0
 if not exist build (  #判断文件夹build是否存在，不存在则就创建
     mkdir build
 ) else (
