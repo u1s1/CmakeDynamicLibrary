@@ -12,5 +12,5 @@ std::ostream &Message::printObject(std::ostream &os) {
 
 void hello()
 {
-  std::cout<<"hello world test"<<std::endl;
+  std::cout << "hello world test" << std::endl;
 }
