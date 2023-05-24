@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 # project name and language
 project(recipe-03 LANGUAGES CXX)
 
-set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+#set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_definitions(-DCROSS_PLATFORM_LIBRARY_EXPORTS)
 
 #配置编译后的输出路径
  # 设定动态链接库的存储路径

@@ -9,3 +9,8 @@ std::ostream &Message::printObject(std::ostream &os) {
 
   return os;
 }
+
+void hello()
+{
+  std::cout<<"hello world 测试"<<std::endl;
+}

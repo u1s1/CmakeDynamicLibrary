@@ -12,6 +12,8 @@ int main() {
 
   std::cout << say_goodbye << std::endl;
 
+  hello();
+
   system("pause");
 
   return EXIT_SUCCESS;
