@@ -22,6 +22,6 @@ public:
 };
 
 //导出函数的参数必须是void
-extern "C" CROSS_PLATFORM_API Interface* NewMessage(void);
+extern "C" CROSS_PLATFORM_API Interface* NewMessage(const char* m);
 
 #endif     //_INTERFACE_H_

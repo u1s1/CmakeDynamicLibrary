@@ -25,7 +25,7 @@ void hello()
   std::cout << "hello world test" << std::endl;
 }
 
-Interface* NewMessage(void)
+Interface* NewMessage(const char* m)
 {
-  return new Message("这是测试文本");
+  return new Message(m);
 }
