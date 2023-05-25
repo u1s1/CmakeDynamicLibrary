@@ -1,3 +1,6 @@
+#ifndef _INTERFACE_H_
+#define _INTERFACE_H_
+
 #ifdef _WIN32   //用于判断是否是win平台
     #define CROSS_PLATFORM_HIDDEN_API
     #ifdef CROSS_PLATFORM_LIBRARY_EXPORTS
@@ -18,3 +21,5 @@ public:
 
 //导出函数的参数必须是void
 extern "C" CROSS_PLATFORM_API Interface* NewMessage(void);
+
+#endif     //_INTERFACE_H_

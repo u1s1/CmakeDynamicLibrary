@@ -16,4 +16,4 @@ private:
 
 extern "C" CROSS_PLATFORM_API void hello();
 
-#endif
+#endif     //_MESSAGE_H_
