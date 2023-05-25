@@ -16,4 +16,5 @@ public:
 	virtual void ShowMsg() = 0; // 将调用方需要调用的成员函数声明成纯虚函数
 };
 
+//导出函数的参数必须是void
 extern "C" CROSS_PLATFORM_API Interface* NewMessage(void);

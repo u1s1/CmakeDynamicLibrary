@@ -15,7 +15,7 @@ void hello()
   std::cout << "hello world test" << std::endl;
 }
 
-extern "C" CROSS_PLATFORM_API Interface* NewMessage(void)
+Interface* NewMessage(void)
 {
-  return new Message("this is test message");
+  return new Message("这是测试文本");
 }
