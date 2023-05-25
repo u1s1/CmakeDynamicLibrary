@@ -7,11 +7,13 @@
 
 class CROSS_PLATFORM_API Message : public Interface{
 public:
-  Message(const std::string &m);
+  Message(const char* m);
   virtual void ShowMsg();
+  virtual void SetStr(const char* m);
+  virtual const char* GetStr();
 
 private:
-  std::string message_;
+  const char* message_;
 };
 
 extern "C" CROSS_PLATFORM_API void hello();

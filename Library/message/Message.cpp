@@ -3,11 +3,21 @@
 #include <iostream>
 #include <string>
 
-Message::Message(const std::string &m):message_(m) {}
+Message::Message(const char* m):message_(m) {}
 
 void Message::ShowMsg()
 {
   std::cout << message_ << std::endl;
+}
+
+void Message::SetStr(const char* m)
+{
+  message_ = m;
+}
+
+const char* Message::GetStr()
+{
+  return message_;
 }
 
 void hello()

@@ -14,6 +14,9 @@ int main() {
 
   hello();
 
+  say_goodbye.SetStr("goodbye solar system");
+  std::cout << say_goodbye.GetStr() << std::endl;
+
   system("pause");
 
   return EXIT_SUCCESS;

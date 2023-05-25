@@ -1,4 +1,9 @@
+
+#if defined(_WIN32)
 #include <windows.h>
+#else
+#include <dlfcn.h>
+#endif
 #include "Interface.hpp"
 
 typedef void (*_VOID_)();
