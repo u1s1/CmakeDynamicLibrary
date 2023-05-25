@@ -6,11 +6,11 @@
 int main() {
   Message say_hello("Hello, CMake World!");
 
-  std::cout << say_hello << std::endl;
+  say_hello.ShowMsg();
 
   Message say_goodbye("Goodbye, CMake World");
 
-  std::cout << say_goodbye << std::endl;
+  say_goodbye.ShowMsg();
 
   hello();
 

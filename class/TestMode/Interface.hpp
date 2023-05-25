@@ -1,9 +1,3 @@
-#ifndef _MESSAGE_H_
-#define _MESSAGE_H_
-
-#include <iosfwd>
-#include <string>
-
 #ifdef _WIN32   //用于判断是否是win平台
     #define CROSS_PLATFORM_HIDDEN_API
     #ifdef CROSS_PLATFORM_LIBRARY_EXPORTS
@@ -16,19 +10,10 @@
     #define CROSS_PLATFORM_HIDDEN_API __attribute((visibility("hidden"))) // 明确指示，这个函数在动态库中不可见
 #endif
 
-class CROSS_PLATFORM_API Message {
+class CROSS_PLATFORM_API Interface
+{
 public:
-  Message(const std::string &m) : message_(m) {}
-
-  friend std::ostream &operator<<(std::ostream &os, Message &obj) {
-    return obj.printObject(os);
-  }
-
-private:
-  std::string message_;
-  std::ostream &printObject(std::ostream &os);
+	virtual void ShowMsg() = 0; // 将调用方需要调用的成员函数声明成纯虚函数
 };
 
-CROSS_PLATFORM_API void hello();
-
-#endif
+extern "C" CROSS_PLATFORM_API Interface* NewMessage(void);
