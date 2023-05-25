@@ -3,3 +3,5 @@
 TestMode/hello-world.exe
 .vscode/settings.json
 .vscode/tasks.json
+TestMode/message.dll
+TestMode/libmessage.so
