@@ -13,9 +13,9 @@ typedef void (*_VOID_)();
 typedef Interface *(Inter)(const char* m);
 
 #if defined(_WIN32)
-    MODULE_HANDLE hModule = LoadLibrary("message.dll");
+    MODULE_HANDLE hModule = LoadLibrary("CrossPlatformLib.dll");
 #else
-    MODULE_HANDLE hModule = dlopen("./libmessage.so", RTLD_NOW | RTLD_GLOBAL);
+    MODULE_HANDLE hModule = dlopen("./libCrossPlatformLib.so", RTLD_NOW | RTLD_GLOBAL);
 #endif
 
 #if defined(_WIN32)

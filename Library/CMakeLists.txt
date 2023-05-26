@@ -2,25 +2,22 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 
 # project name and language
-project(recipe-03 LANGUAGES CXX)
+project(CrossPlatformLib LANGUAGES CXX)
+
+#set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_definitions(-DCROSS_PLATFORM_LIBRARY_EXPORTS)
+
+#配置编译后的输出路径
+ # 设定动态链接库的存储路径
+SET(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_LIST_DIR}/Bin64)
+
+aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR}/Src SrcPath)
 
 # generate a library from sources
-add_subdirectory(./message)
+add_library(CrossPlatformLib
+  SHARED
+  ${SrcPath}
+)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG  ${CMAKE_CURRENT_LIST_DIR}/Bin/Debug)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE  ${CMAKE_CURRENT_LIST_DIR}/Bin/Release)
-set(CMAKE_ARCHIEVE_OUTPUT_DIRECTORY_DEBUG  ${CMAKE_CURRENT_LIST_DIR}/Bin/Debug)
-set(CMAKE_ARCHIEVE_OUTPUT_DIRECTORY_RELEASE  ${CMAKE_CURRENT_LIST_DIR}/Bin/Release)
-message("------------------>add_subdirectory() fininshed!") 
-message("------------------>CMAKE_ARCHIVE_OUTPUT_DIRECTORY：${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}")
-message("------------------>CMAKE_LIBRARY_OUTPUT_DIRECTORY：${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
-message("------------------>CMAKE_RUNTIME_OUTPUT_DIRECTORY ：${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
-
-
-
-add_executable(hello-world hello-world.cpp)
-
-target_link_libraries(hello-world message)
-
-
-
+target_include_directories(CrossPlatformLib PUBLIC ./include)
+target_include_directories(CrossPlatformLib PUBLIC ./Interface)
