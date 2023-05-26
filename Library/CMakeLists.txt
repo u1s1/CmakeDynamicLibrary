@@ -13,7 +13,8 @@ SET(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_LIST_DIR}/Bin64)
 
 aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR}/Src SrcPath)
 
-include_directories(./include)
+include_directories(./Include)
+include_directories(./Interface)
 # generate a library from sources
 add_library(message
   SHARED
