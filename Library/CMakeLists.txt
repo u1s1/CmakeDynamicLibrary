@@ -13,11 +13,11 @@ SET(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_LIST_DIR}/Bin64)
 
 aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR}/Src SrcPath)
 
-include_directories(./Include)
-include_directories(./Interface)
-
 # generate a library from sources
 add_library(CrossPlatformLib
   SHARED
   ${SrcPath}
 )
+
+target_include_directories(CrossPlatformLib PUBLIC ./include)
+target_include_directories(CrossPlatformLib PUBLIC ./Interface)
