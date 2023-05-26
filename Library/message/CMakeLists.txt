@@ -9,14 +9,16 @@ add_definitions(-DCROSS_PLATFORM_LIBRARY_EXPORTS)
 
 #配置编译后的输出路径
  # 设定动态链接库的存储路径
- SET(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_LIST_DIR}/../bin)
+SET(LIBRARY_OUTPUT_PATH  ${CMAKE_CURRENT_LIST_DIR}/Bin64)
+
+aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR}/Src SrcPath)
 
 include_directories(./include)
 # generate a library from sources
 add_library(message
   SHARED
-    Message.cpp
-  )
+  ${SrcPath}
+)
 
 target_include_directories(message PUBLIC ./include)
 

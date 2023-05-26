@@ -3,7 +3,7 @@
 
 #include <iosfwd>
 #include <string>
-#include "Interface.hpp"
+#include "InterfaceInclude.h"
 
 class CROSS_PLATFORM_API Message : public Interface{
 public:
