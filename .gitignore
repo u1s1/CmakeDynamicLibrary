@@ -9,3 +9,5 @@ Library/message/Bin64
 Library/message/build
 TestMode/hello-world
 Library/Bin64
+TestMode/CrossPlatformLib.dll
+TestMode/libCrossPlatformLib.so

@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 
 # project name and language
-project(recipe-03 LANGUAGES CXX)
+project(CrossPlatformLib LANGUAGES CXX)
 
 #set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 add_definitions(-DCROSS_PLATFORM_LIBRARY_EXPORTS)
@@ -15,11 +15,9 @@ aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR}/Src SrcPath)
 
 include_directories(./Include)
 include_directories(./Interface)
+
 # generate a library from sources
-add_library(message
+add_library(CrossPlatformLib
   SHARED
   ${SrcPath}
 )
-
-target_include_directories(message PUBLIC ./include)
-
