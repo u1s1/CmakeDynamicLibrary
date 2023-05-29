@@ -3,11 +3,8 @@
 #include "head.h"
 
 int main() {
-#ifndef _WIN32
-  void (*hello_str)(void);
-  *(void **)(&hello_str) = fun;
-#endif
-  hello_str();
+  hello();
+  
   IMessage *face = Message("好大的太阳");
   face->ShowMsg();
   face->SetStr("再见，太阳系");
