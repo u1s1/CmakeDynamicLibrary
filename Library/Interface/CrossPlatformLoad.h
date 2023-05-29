@@ -1,6 +1,8 @@
 #ifndef _CROSSPLATFORMLOAD_H_
 #define _CROSSPLATFORMLOAD_H_
 
+#include "IMessage.h"
+
 #if defined(_WIN32)
     #include <windows.h>
     typedef HMODULE  MODULE_HANDLE;
@@ -23,5 +25,11 @@ void *gdl_GetProc(const char *pfname)
     }
     return 0;
 };
+
+typedef void (*_VOID_)();
+typedef IMessage *(_IMessage_)(const char* m);
+
+_VOID_ hello = (_VOID_)gdl_GetProc("hello");
+_IMessage_* Message=(_IMessage_ *)gdl_GetProc("NewMessage");
 
 #endif
