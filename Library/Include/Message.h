@@ -3,9 +3,9 @@
 
 #include <iosfwd>
 #include <string>
-#include "InterfaceInclude.h"
+#include "IMessage.h"
 
-class CROSS_PLATFORM_API Message : public Interface{
+class CROSS_PLATFORM_API Message : public IMessage{
 public:
   Message(const char* m);
   virtual void ShowMsg();

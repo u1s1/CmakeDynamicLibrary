@@ -19,5 +19,5 @@ add_library(CrossPlatformLib
   ${SrcPath}
 )
 
-target_include_directories(CrossPlatformLib PUBLIC ./include)
+target_include_directories(CrossPlatformLib PUBLIC ./Include)
 target_include_directories(CrossPlatformLib PUBLIC ./Interface)
