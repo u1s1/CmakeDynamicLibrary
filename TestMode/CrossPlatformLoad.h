@@ -4,22 +4,15 @@
 #if defined(_WIN32)
     #include <windows.h>
     typedef HMODULE  MODULE_HANDLE;
+    MODULE_HANDLE hModule = LoadLibrary("CrossPlatformLib.dll");
 #else
     #include <dlfcn.h>
     typedef void *  MODULE_HANDLE;
-#endif
-
-#include "Interface.hpp"
-
-
-void *gdl_GetProc(const char *pfname)
-{
-#if defined(_WIN32)
-    MODULE_HANDLE hModule = LoadLibrary("CrossPlatformLib.dll");
-#else
     MODULE_HANDLE hModule = dlopen("./libCrossPlatformLib.so", RTLD_NOW | RTLD_GLOBAL);
 #endif
 
+void *gdl_GetProc(const char *pfname)
+{
    if(hModule)
    {
 #if defined(_WIN32)

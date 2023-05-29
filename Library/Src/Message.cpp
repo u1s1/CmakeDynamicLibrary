@@ -1,4 +1,4 @@
-#include "Message.hpp"
+#include "Message.h"
 
 #include <iostream>
 #include <string>
@@ -25,7 +25,7 @@ void hello()
   std::cout << "hello world test" << std::endl;
 }
 
-Interface* NewMessage(const char* m)
+IMessage* NewMessage(const char* m)
 {
   return new Message(m);
 }

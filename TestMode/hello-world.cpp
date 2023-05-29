@@ -8,7 +8,7 @@ int main() {
   *(void **)(&hello_str) = fun;
 #endif
   hello_str();
-  Interface *face = pfn("好大的太阳");
+  IMessage *face = Message("好大的太阳");
   face->ShowMsg();
   face->SetStr("再见，太阳系");
   face->ShowMsg();

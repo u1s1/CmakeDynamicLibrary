@@ -1,28 +1,14 @@
-
-#if defined(_WIN32)
-    #include <windows.h>
-    typedef HMODULE  MODULE_HANDLE;
-#else
-    #include <dlfcn.h>
-    typedef void *  MODULE_HANDLE;
-#endif
-
-#include "Interface.hpp"
+#include "CrossPlatformLoad.h"
+#include "IMessage.h"
 
 typedef void (*_VOID_)();
-typedef Interface *(Inter)(const char* m);
+typedef IMessage *(_IMessage_)(const char* m);
 
 #if defined(_WIN32)
-    MODULE_HANDLE hModule = LoadLibrary("CrossPlatformLib.dll");
+    _VOID_ hello_str = (_VOID_)gdl_GetProc("hello");
+    _IMessage_* Message=(_IMessage_ *)gdl_GetProc("NewMessage");
 #else
-    MODULE_HANDLE hModule = dlopen("./libCrossPlatformLib.so", RTLD_NOW | RTLD_GLOBAL);
-#endif
-
-#if defined(_WIN32)
-    _VOID_ hello_str = (_VOID_)GetProcAddress(hModule, "hello");
-    Inter* pfn=(Inter *)GetProcAddress(hModule,"NewMessage");
-#else
-    void *fun = dlsym(hModule, "hello");
-    Inter *pfn = (Inter *)dlsym(hModule, "NewMessage");
+    void *fun = gdl_GetProc("hello");
+    _IMessage_ *Message = (_IMessage_ *)gdl_GetProc("NewMessage");
 #endif
 
