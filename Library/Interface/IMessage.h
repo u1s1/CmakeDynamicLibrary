@@ -1,7 +1,7 @@
 #ifndef _IMESSAGE_H_
 #define _IMESSAGE_H_
 
-#include "MarcoDefine.h"
+#include "MacroDefine.h"
 
 class CROSS_PLATFORM_API IMessage
 {
