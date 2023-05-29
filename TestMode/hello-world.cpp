@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <iostream>
-#include "CrossPlatformLoad.h"
+#include "../Library/Interface/CrossPlatformLoad.h"
 
 int main() {
   hello();
